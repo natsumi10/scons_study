@@ -1,2 +1,2 @@
 # scons_study
-This is for studying SCons and C++.
+This is for studying SCons, C++ and Python.
