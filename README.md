@@ -9,6 +9,12 @@ This is for studying SCons, C++ and Python.
 
 ## 現在scons_studyで学習及び実装予定中の物
 
+### SCons
+
+- SConstruct での色々なテスト
+- ドキュメントの読み込みとサンプルコードのテスト
+
+### C++
 - class の実装テスト
 - module の実装テスト
 - ヘッダーファイルの実装テスト
