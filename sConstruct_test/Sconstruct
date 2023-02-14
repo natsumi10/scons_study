@@ -1,0 +1,13 @@
+env = Environment()
+
+print ("\nCalling Program('hello.cpp')")
+app_hello = env.Program(target='hello', source=["hello.cpp"])
+
+for item in app_hello:
+	for child in item.all_children():
+		print (child)
+
+print ("\nCalling Program('goodbye.cpp')")
+app_goodbye = env.Program(target='goodbye', source=["goodbye.cpp"])
+
+print ("Finished calling Program()")
