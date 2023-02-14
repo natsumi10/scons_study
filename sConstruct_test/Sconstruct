@@ -6,8 +6,18 @@ app_hello = env.Program(target='hello', source=["hello.cpp"])
 for item in app_hello:
 	for child in item.all_children():
 		print (child)
+	# result : hello.o, /bin/g++
 
 print ("\nCalling Program('goodbye.cpp')")
 app_goodbye = env.Program(target='goodbye', source=["goodbye.cpp"])
 
-print ("Finished calling Program()")
+print ("Finished calling Program()\n")
+
+
+for item in Glob("*.cpp"):
+	print(item)
+	# result : goodbye.cpp, hello.cpp
+
+
+#print(Glob("*.cpp"))
+app_both = env.Program('my_program', Glob('*.cpp'))
