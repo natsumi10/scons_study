@@ -9,12 +9,12 @@ This is for studying SCons, C++ and Python.
 
 ## 現在scons_studyで学習及び実装予定中の物
 
-### SCons
+### SConsに関してのTodo
 
 - SConstruct での色々なテスト
 - ドキュメントの読み込みとサンプルコードのテスト
 
-### C++（C＋＋の勉強及びSConsで操作する為のテストプログラムの実装）
+### C＋＋の勉強及びSConsで操作する為のテストプログラムの実装
 - class の実装テスト
 - module の実装テスト
 - ヘッダーファイルの実装テスト
