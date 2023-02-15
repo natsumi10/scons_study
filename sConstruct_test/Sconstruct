@@ -1,17 +1,23 @@
+
+
+def glob_func_test():
+	print ("\nStart printing all cpp files in this folder")
+	# result : print all cpp files in the same folder with Sconstruct
+	for item in Glob("*.cpp"):
+		print(item)
+	print("End\n")
+	return 0
+
 env = Environment()
 
-print ("\nCalling Program('hello.cpp')")
 
+#print ("\nCalling Program('hello.cpp')")
 # This result gets error because there is no main function in hello.cpp
+# You need main function for compiling cpp files.
 #app_hello = env.Program(target='hello', source=["hello.cpp"])
 
 
-
-print ("\nStart printing all cpp files in this folder")
-# result : print all cpp files in the same folder with Sconstruct
-for item in Glob("*.cpp"):
-	print(item)
-print("End\n")
+glob_func_test()
 
 all_apps = env.Program('my_program', Glob('*.cpp'))
 
