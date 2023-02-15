@@ -14,7 +14,7 @@ This is for studying SCons, C++ and Python.
 - SConstruct での色々なテスト
 - ドキュメントの読み込みとサンプルコードのテスト
 
-### C++
+### C++（C＋＋の勉強及びSConsで操作する為のテストプログラムの実装）
 - class の実装テスト
 - module の実装テスト
 - ヘッダーファイルの実装テスト
