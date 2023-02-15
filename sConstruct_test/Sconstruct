@@ -1,27 +1,41 @@
 
 
 def glob_func_test():
-	print ("\nStart printing all cpp files in this folder")
+	"""
+		This is to see how Glob function works.
+		Grab all cpp file in the same directory and print them.
+		:rtype: int
+	"""
+	print ("\nStart printing all cpp files in this folder\n---")
 	# result : print all cpp files in the same folder with Sconstruct
 	for item in Glob("*.cpp"):
 		print(item)
-	print("End\n")
+	print("---\nDONE\n")
+	return 0
+
+def get_error_no_main_func():
+	"""
+		If you run this function, you will get error message from scons
+		because hello.cpp has no main function.
+		:rtype: int
+	"""
+	print ("\nYou called get_error_no_main_func method.")
+	# This result gets error because there is no main function in hello.cpp
+	# You need main function for compiling cpp files.
+	app_hello = env.Program(target='hello', source=["hello.cpp"])
 	return 0
 
 env = Environment()
 
 
-#print ("\nCalling Program('hello.cpp')")
-# This result gets error because there is no main function in hello.cpp
-# You need main function for compiling cpp files.
-#app_hello = env.Program(target='hello', source=["hello.cpp"])
+
 
 
 glob_func_test()
 
 all_apps = env.Program('my_program', Glob('*.cpp'))
 
-print ("\nStart printing the children in all_apps")
+print ("\nStart printing the children in all_apps\n---")
 
 # Print all children item inside all_app
 for item in all_apps:
@@ -29,4 +43,4 @@ for item in all_apps:
 		print (child)
 	# result : Print [/bin/g++] and all object file for example :hello.o.  
 
-print("End.\n")
+print("---\nDONE.\n")
