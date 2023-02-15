@@ -1,23 +1,26 @@
 env = Environment()
 
 print ("\nCalling Program('hello.cpp')")
-app_hello = env.Program(target='hello', source=["hello.cpp"])
 
-for item in app_hello:
-	for child in item.all_children():
-		print (child)
-	# result : hello.o, /bin/g++
-
-print ("\nCalling Program('goodbye.cpp')")
-app_goodbye = env.Program(target='goodbye', source=["goodbye.cpp"])
-
-print ("Finished calling Program()\n")
+# This result gets error because there is no main function in hello.cpp
+#app_hello = env.Program(target='hello', source=["hello.cpp"])
 
 
+
+print ("\nStart printing all cpp files in this folder")
+# result : print all cpp files in the same folder with Sconstruct
 for item in Glob("*.cpp"):
 	print(item)
-	# result : goodbye.cpp, hello.cpp
+print("End\n")
 
+all_apps = env.Program('my_program', Glob('*.cpp'))
 
-#print(Glob("*.cpp"))
-app_both = env.Program('my_program', Glob('*.cpp'))
+print ("\nStart printing the children in all_apps")
+
+# Print all children item inside all_app
+for item in all_apps:
+	for child in item.all_children():
+		print (child)
+	# result : Print [/bin/g++] and all object file for example :hello.o.  
+
+print("End.\n")
