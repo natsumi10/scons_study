@@ -11,10 +11,10 @@ This is for studying SCons, C++ and Python.
 
 ### SConsに関してのTodo
 
-- SConstruct での色々なテスト
+- SConstructでの色々なテスト
 - ドキュメントの読み込みとサンプルコードのテスト
 
 ### C＋＋の勉強及びSConsで操作する為のテストプログラムの実装
-- class の実装テスト
-- module の実装テスト
+- classの実装テスト
+- moduleの実装テスト
 - ヘッダーファイルの実装テスト
