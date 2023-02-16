@@ -68,18 +68,19 @@ def tips_collection():
 	"""
 	src_files = Split('main.cpp hello.cpp goodbye.cpp')
 	print ("\nsrc_files is :",src_files,"\n")
-	env.Program('program', src_files)
+	env.Program('split_etest_1', src_files)
 
 	return 0
 
 
 env = Environment()
 
-#glob_func_test()
-
 all_apps = env.Program('my_program', Glob('*.cpp'))
 
-#This is the function that 
+# This is test function to see how glob function works.
+#glob_func_test()
+
+#This is the function that show all children of the object variable.
 #print_all_children(all_apps)
 
 #This is the function that shows tips learned through the SCons docs.

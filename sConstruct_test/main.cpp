@@ -1,20 +1,6 @@
 #include <iostream>
 
-class Line
-{
-	public:
-	Line(float begin, float end) : begin(begin),end(end)
-	{}
-
-	float GetLength()
-	{
-		return end - begin;
-	};
-
-	private:
-	float begin;
-	float end;
-};
+#include "line.h"
 
 int main()
 {
@@ -22,7 +8,7 @@ int main()
 
 	float begin = 1.0;
 	float end = 3.5;
-	Line line(begin, end);
+	line_t line(begin, end);
 
 	float length = line.GetLength();
 
