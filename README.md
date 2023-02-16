@@ -17,5 +17,6 @@ The version of C++ : C++14
 
 ### C＋＋の勉強及びSConsで操作する為のテストプログラムの実装
 - classの実装テスト (:Done)
+- libraryの実装テスト
 - moduleの実装テスト
 - ヘッダーファイルの実装テスト
