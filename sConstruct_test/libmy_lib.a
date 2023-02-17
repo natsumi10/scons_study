@@ -1,0 +1,15 @@
+!<arch>
+line.h/         1676533196  1001  100   100644  120       `
+
+class line_t
+{
+	public:
+	line_t(float begin, float end);
+	
+
+	float GetLength();
+
+	private:
+	float begin;
+	float end;
+};
