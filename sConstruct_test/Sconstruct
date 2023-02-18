@@ -77,8 +77,9 @@ env = Environment()
 
 all_apps = env.Program('my_program', Glob('*.cpp'))
 
-Library('_my_lib', Glob('*.h'))
-StaticLibrary('_my_static_lib', Glob('*.h'))
+#Library('_my_lib', Glob('*.h'))
+#StaticLibrary('_my_static_lib', Glob('*.h'))
+SharedLibrary('_my_dll', Glob('*.cpp'))
 
 # This is test function to see how glob function works.
 #glob_func_test()
