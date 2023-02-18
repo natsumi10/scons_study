@@ -72,14 +72,29 @@ def tips_collection():
 
 	return 0
 
+def create_Library():
+	"""
+		The refference how to create library.
+		:rtype: int
+	"""
+	
+	# Building Libraries from source code or object files.
+	Library('_my_lib', Glob('*.h'))
+	
+	# Building Static Libraries.
+	StaticLibrary('_my_static_lib', Glob('*.h'))
+
+	# Building Shared (DLL) Libraries.
+	SharedLibrary('_my_dll', Glob('*.cpp'))
+	
+	return 0;
+
 
 env = Environment()
 
 all_apps = env.Program('my_program', Glob('*.cpp'))
 
-#Library('_my_lib', Glob('*.h'))
-#StaticLibrary('_my_static_lib', Glob('*.h'))
-SharedLibrary('_my_dll', Glob('*.cpp'))
+
 
 # This is test function to see how glob function works.
 #glob_func_test()
