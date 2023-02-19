@@ -1,12 +1,12 @@
 # scons_study
-This is for studying SCons, C++ and Python.
-The version of C++ : C++14
+This is for studying SCons, C++ and Python. 
+Using C++14.
 
 ## 各フォルダの説明
 
-- hello_cpp : C++での hello world プログラム
-- hello_scons : Cでの hello world プログラム
 - scons_study : Sconstruct及びC++の学習用プログラム
+- hello_cpp, hello_scons : hello world プログラム
+
 
 ## 現在scons_studyで学習及び実装予定中の物
 
