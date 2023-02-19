@@ -1,6 +1,8 @@
 #include <iostream>
 
 #include "line.hpp"
+#include "mathLibrary.hpp"
+
 
 int main()
 {
@@ -13,6 +15,15 @@ int main()
 	float length = line.GetLength();
 
 	std::cout << "Length:" << length << std::endl;
+
+	double a = 7.4;
+	double b = 20;
+
+	mathTest test(a, b);
+
+	double ans = test.Add();
+
+	std::cout << "a + b = " << ans << std::endl;
 
 	return 0;
 }

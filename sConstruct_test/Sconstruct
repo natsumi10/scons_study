@@ -94,7 +94,7 @@ def create_Library():
 
 env = Environment()
 
-create_Library()
+Library('_my_lib', Glob('*.hpp'))
 
 all_apps = env.Program('my_program', Glob('*.cpp'))
 
