@@ -78,13 +78,15 @@ def create_Library():
 		:rtype: int
 	"""
 	
+	cpp_files = Split('hello.cpp goodbye.cpp')
+
 	# Building Libraries from source code or object files.
-	Library('_my_lib', Glob('*.h'))
+	Library('_my_lib', Glob('*.hpp')+cpp_files)
 	
 	# Building Static Libraries.
-	StaticLibrary('_my_static_lib', Glob('*.h'))
+	StaticLibrary('_my_static_lib', Glob('*.hpp')+cpp_files)
 
-	# Building Shared (DLL) Libraries.
+	# Building Shared Libraries.(DLL:Dynamic Linking Library) 
 	SharedLibrary('_my_dll', Glob('*.cpp'))
 	
 	return 0;
@@ -92,8 +94,9 @@ def create_Library():
 
 env = Environment()
 
-all_apps = env.Program('my_program', Glob('*.cpp'))
+create_Library()
 
+all_apps = env.Program('my_program', Glob('*.cpp'))
 
 
 # This is test function to see how glob function works.
