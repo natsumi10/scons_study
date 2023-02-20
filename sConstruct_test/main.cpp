@@ -1,7 +1,8 @@
 #include <iostream>
+using namespace std;
 
-#include "line.hpp"
-#include "mathLibrary.hpp"
+#include "line.h"
+#include "mathLibrary.h"
 
 
 int main()
@@ -19,7 +20,7 @@ int main()
 	double a = 7.4;
 	double b = 20;
 
-	mathTest test(a, b);
+	mathLibrary::mathTest test(a, b);
 
 	double ans = test.Add();
 

@@ -84,7 +84,7 @@ def create_Library():
 	Library('_my_lib', Glob('*.hpp')+cpp_files)
 	
 	# Building Static Libraries.
-	StaticLibrary('_my_static_lib', Glob('*.hpp')+cpp_files)
+	StaticLibrary('_my_static_lib', Glob('*.h')+cpp_files)
 
 	# Building Shared Libraries.(DLL:Dynamic Linking Library) 
 	SharedLibrary('_my_dll', Glob('*.cpp'))
@@ -94,7 +94,7 @@ def create_Library():
 
 env = Environment()
 
-Library('_my_lib', Glob('*.hpp'))
+Library('_my_lib', Glob('*.h'))
 
 all_apps = env.Program('my_program', Glob('*.cpp'))
 

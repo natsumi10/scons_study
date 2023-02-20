@@ -1,9 +1,9 @@
-#include "mathLibrary.hpp"
+#include "mathLibrary.h"
 
-mathTest::mathTest(double a, double b) : a(a), b(b)
+mathLibrary::mathTest::mathTest(double a, double b) : a(a), b(b)
 {}
 
-double mathTest::Add()
+double mathLibrary::mathTest::Add()
 {
 	return a + b;
 };
