@@ -2,6 +2,8 @@
 
 /* "#pragma once" is the Include guard.
 * We use this to avoid compiler include this code many times.
+* If you don't use "pragma once", you can use #ifndef as follows.
+* (Note that #ifndef way is not the same way.)
 */
 
 
