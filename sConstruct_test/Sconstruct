@@ -81,7 +81,7 @@ def create_Library():
 	cpp_files = Split('hello.cpp goodbye.cpp')
 
 	# Building Libraries from source code or object files.
-	Library('_my_lib', Glob('*.hpp')+cpp_files)
+	Library('_my_lib', Glob('*.h')+cpp_files)
 	
 	# Building Static Libraries.
 	StaticLibrary('_my_static_lib', Glob('*.h')+cpp_files)
