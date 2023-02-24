@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 #include "line.h"
@@ -7,15 +8,28 @@ using namespace std;
 int iterator_test()
 {
 	std::cout << "\nStart iterator_test method " << std::endl;
-	int arr_test[5] = {0,1,2,3,4};
-	int num = sizeof(arr_test)/sizeof(*arr_test);
-	std::cout << "size is " << num << std::endl;
+	std::vector<int> arr_test = {0,1,2,3,4};
+	
+	int arr_test_normal[5] = {0,1,2,3,4};
 
+	std::cout << "\nStart Normal int array. " << std::endl;
+	int num = sizeof(arr_test_normal)/sizeof(*arr_test_normal);
+	std::cout << "size is " << num << std::endl;
+	
 	int i;
 	for ( i=0; i < num; i++){
-		std::cout << "i = " << i << std::endl;
-		std::cout << "num = " << arr_test[i] << std::endl;
+		//std::cout << "i = " << i << std::endl;
+		std::cout << "num = " << arr_test_normal[i] << std::endl;
 	}
+	
+	/* I don't know why but auto doesn't work*/
+	//Returns an iterator pointing to the past-the-end element in the sequence.
+	// the past-the-end element means the element after the last element.
+	std::cout << "\nStart vector (dynamic) int array. " << std::endl;
+	for( auto it = arr_test.begin(); it != arr_test.end(); ++it ){
+		std::cout << "num = " << *it << std::endl;
+	}
+	
 	return 0;
 }
 
@@ -52,9 +66,9 @@ int main()
 {
 	std::cout << "\nThis is main function!" << std::endl;
 
-	lib_test();
+	//lib_test();
 
-	get_length();
+	//get_length();
 
 	iterator_test();
 	
