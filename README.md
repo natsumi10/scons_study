@@ -1,6 +1,7 @@
 # scons_study
 This is for studying SCons, C++ and Python. 
-Using C++14.
+
+gcc version 12.1.0
 
 ## 各フォルダの説明
 
