@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <array>
 using namespace std;
 
 #include "line.h"
@@ -8,9 +8,11 @@ using namespace std;
 int iterator_test()
 {
 	std::cout << "\nStart iterator_test method " << std::endl;
-	std::vector<int> arr_test = {0,1,2,3,4};
 	
 	int arr_test_normal[5] = {0,1,2,3,4};
+
+	//This is the array for iterator.Can't use normal array above.
+	std::array<int,5> arr_test = {0,1,2,3,4};
 
 	std::cout << "\nStart Normal int array. " << std::endl;
 	int num = sizeof(arr_test_normal)/sizeof(*arr_test_normal);
@@ -22,7 +24,6 @@ int iterator_test()
 		std::cout << "num = " << arr_test_normal[i] << std::endl;
 	}
 	
-	/* I don't know why but auto doesn't work*/
 	//Returns an iterator pointing to the past-the-end element in the sequence.
 	// the past-the-end element means the element after the last element.
 	std::cout << "\nStart vector (dynamic) int array. " << std::endl;

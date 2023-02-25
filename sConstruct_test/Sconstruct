@@ -1,3 +1,5 @@
+import os.path
+
 def glob_func_test():
 	"""
 		This is to see how Glob function works.
@@ -94,9 +96,25 @@ def create_Library():
 
 env = Environment()
 
-Library('_my_lib', Glob('*.h'))
+lib_list = Library('_my_lib', Glob('*.h'))
+
 
 all_apps = env.Program('my_program', Glob('*.cpp'))
+
+print("\nname:", all_apps[0],"\n")
+
+
+print("\nPrinting Node's file name test.\n")
+lib_names = []
+name = str("aaa")
+for lib_name in all_apps :
+	name = str(lib_name)
+	if not os.path.exists(name):
+		print(name,"does not exist!\n")
+	else : 
+		print("name :",name,"\n")
+		lib_names.append(name)
+
 
 
 # This is test function to see how glob function works.
