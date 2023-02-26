@@ -5,6 +5,8 @@ using namespace std;
 #include "line.h"
 #include "mathLibrary.h"
 
+
+
 int iterator_test()
 {
 	std::cout << "\nStart iterator_test method " << std::endl;
@@ -26,10 +28,16 @@ int iterator_test()
 	
 	//Returns an iterator pointing to the past-the-end element in the sequence.
 	// the past-the-end element means the element after the last element.
-	std::cout << "\nStart vector (dynamic) int array. " << std::endl;
+	std::cout << "\nStart vector (dynamic) array with iterator. " << std::endl;
 	for( auto it = arr_test.begin(); it != arr_test.end(); ++it ){
 		std::cout << "num = " << *it << std::endl;
 	}
+
+	std::cout << "\nStart another for loop with iterator. " << std::endl;
+	for(auto&& e : arr_test){
+		std::cout << "num = " << e << std::endl;
+	}
+
 	
 	return 0;
 }
