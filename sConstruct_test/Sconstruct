@@ -121,8 +121,27 @@ def decider_test():
 
 	return 0
 
+def print_env(env):
+	"""
+		Printing items inside Environment.
+		:rtype: int
+	"""
+
+	# Printing the specific item.
+	print("CC is ",env['CC'])
+
+	# Printing all items.
+	check_env = env.Dictionary()
+	print("\nPrint items inside env")
+	for key in check_env:
+		print(key,":",check_env[key])
+
+	return 0
+
 
 env = Environment(CPPPATH = '.')
+
+
 
 lib_list = Library('_my_lib', Glob('*.h'))
 
@@ -148,8 +167,11 @@ decider_test()
 # This is test function to see how glob function works.
 #glob_func_test()
 
-#This is the function that show all children of the object variable.
+# This is the function that show all children of the object variable.
 #print_all_children(all_apps)
 
-#This is the function that shows tips learned through the SCons docs.
+# This is the function that shows tips learned through the SCons docs.
 #tips_collection()
+
+# This is the function to print items inside env
+#print_env(env)
