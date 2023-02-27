@@ -1,4 +1,4 @@
-#include "mathLibrary.h"
+#include "mathLibrary.hpp"
 
 mathLibrary::mathTest::mathTest(double a, double b) : a(a), b(b)
 {}

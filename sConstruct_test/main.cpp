@@ -2,8 +2,8 @@
 #include <array>
 using namespace std;
 
-#include "line.h"
-#include "mathLibrary.h"
+#include "line.hpp"
+#include "mathLibrary.hpp"
 
 
 
@@ -74,11 +74,11 @@ int main()
 {
 	std::cout << "\nThis is main function!" << std::endl;
 
-	//lib_test();
+	lib_test();
 
-	//get_length();
+	get_length();
 
-	//iterator_test();
+	iterator_test();
 	
 	return 0;
 }
