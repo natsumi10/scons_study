@@ -4,7 +4,8 @@ using namespace std;
 
 #include "line.hpp"
 #include "mathLibrary.hpp"
-
+#include "hello.hpp"
+#include "goodbye.hpp"
 
 
 int iterator_test()
@@ -74,11 +75,14 @@ int main()
 {
 	std::cout << "\nThis is main function!" << std::endl;
 
-	lib_test();
+	//hello();
+	//goodbye();
 
-	get_length();
+	//lib_test();
 
-	iterator_test();
+	//get_length();
+
+	//iterator_test();
 	
 	return 0;
 }
