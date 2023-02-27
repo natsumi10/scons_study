@@ -7,8 +7,8 @@
 */
 
 
-#ifndef MATHLIBRARY_HPP_
-#define MATHLIBRARY_HPP_
+#ifndef MATHLIBRARY_HPP
+#define MATHLIBRARY_HPP
 
 namespace mathLibrary
 {
@@ -25,4 +25,4 @@ namespace mathLibrary
 	};
 }
 
-#endif //MATHLIBRARY_HPP_
+#endif //MATHLIBRARY_HPP
