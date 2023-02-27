@@ -38,7 +38,6 @@ int iterator_test()
 		std::cout << "num = " << e << std::endl;
 	}
 
-	
 	return 0;
 }
 
@@ -79,7 +78,7 @@ int main()
 
 	//get_length();
 
-	iterator_test();
+	//iterator_test();
 	
 	return 0;
 }
