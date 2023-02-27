@@ -121,7 +121,8 @@ def decider_test():
 
 	return 0
 
-env = Environment()
+
+env = Environment(CPPPATH = '.')
 
 lib_list = Library('_my_lib', Glob('*.h'))
 
@@ -134,8 +135,8 @@ all_apps = env.Program('my_program', Glob('*.cpp'))
 print("\nPrinting Node's file name test.\n")
 lib_names = []
 name = str("")
-for lib_name in all_apps :
-	name = str(lib_name)
+for l_name in all_apps :
+	name = str(l_name)
 	if not os.path.exists(name):
 		print(name,"does not exist!\n")
 	else : 
