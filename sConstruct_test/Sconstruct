@@ -1,8 +1,8 @@
 import os.path
 
 def glob_func_test():
-	"""
-		This is to see how Glob function works.
+	"""The function to see how Glob function works.
+		
 		Grab all cpp file in the same directory and print them.
 		:rtype: int
 	"""
@@ -14,10 +14,12 @@ def glob_func_test():
 	return 0
 
 def get_error_collection():
-	"""
+	"""The error collections.
+
 		You never use this func because this is the error collections to keep in mind.
 		If you run this function, you will get error message from scons
 		because hello.cpp has no main function.
+	
 		:rtype: int
 	"""
 	print ("\nYou called get_error_collection method.\n")
@@ -41,8 +43,8 @@ def get_error_collection():
 
 
 def print_all_children(all_apps):
-	"""
-		This is the function to see all return value from Program() method.
+	"""The function to see all return value from Program() method.
+		
 		:rtype: int
 	"""
 	# Print all children item inside all_app
@@ -57,8 +59,8 @@ def print_all_children(all_apps):
 
 
 def tips_collection():
-	"""
-		This is tips collection. You can use for Sconstruct.
+	"""The tips collection. You can use for Sconstruct.
+		
 		:rtype: int
 	"""
 	
@@ -75,8 +77,8 @@ def tips_collection():
 	return 0
 
 def create_Library():
-	"""
-		The refference how to create library.
+	"""The refference how to create library.
+		
 		:rtype: int
 	"""
 	
@@ -94,8 +96,8 @@ def create_Library():
 	return 0
 
 def decider_test():
-	"""
-		The refference about decider function in SCons.
+	"""The refference about decider function in SCons.
+		
 		:rtype: int
 	"""
 	#Decider function.
@@ -122,20 +124,17 @@ def decider_test():
 	return 0
 
 def print_env(env):
-	"""
-		Printing items inside Environment.
+	"""Printing items inside Environment.
+		
 		:rtype: int
 	"""
 
 	# Printing the specific item.
 	print("CC is ",env['CC'])
 
-	# Printing all items.
-	check_env = env.Dictionary()
-	print("\nPrint items inside env")
-	for key in check_env:
-		print(key,":",check_env[key])
-
+	for item in sorted(env.Dictionary().items()):
+		print ("construction variable = '%s', value = '%s'" %item)
+		
 	return 0
 
 
@@ -163,6 +162,7 @@ for l_name in all_apps :
 		lib_names.append(name)
 
 decider_test()
+
 
 # This is test function to see how glob function works.
 #glob_func_test()
