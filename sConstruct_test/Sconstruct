@@ -66,7 +66,7 @@ def tips_collection():
 	
 	"""
 	#Example 1: Split function
-	
+	AllowSubstExceptions
 		To make long lists of file names easier to deal with, SCons provides a Split function that takes a quoted list of file names, with the names separated by spaces or other white-space characters, and turns it into a list of separate file names.
 		(From the official documentation: "Chapter 3 :3.5. Making Lists of Files Easier to Read")
 	"""
@@ -138,14 +138,43 @@ def print_env(env):
 	return 0
 
 
+def multi_construction_env_test():
+	"""Using multi construction environments test.
+		
+		:rtype: int
+	"""
+	opt = Environment(CCFLAGS = '-O2')
+	dbg = Environment(CCFLAGS = '-g')
+
+	opt_obj = opt.Object('foo-opt', 'hello.cpp')
+	opt.Program(opt_obj)
+
+	dbg_obj = dbg.Object('foo-dbg', 'hello.cpp')
+	dbg.Program(dbg_obj)
+
+	return 0
+
+
+# This function gets Name Error which tells 'CPPFLAGS' is not defined'.
+#AllowSubstExceptions()
+
+# This function allows these error: IndexError ,NameError, and ZeroDivisionError.
+AllowSubstExceptions(IndexError,NameError,ZeroDivisionError)
+
+
+
 env = Environment(CPPPATH = '.')
+# DefaultEnvironment is faster way but I need to learn more about what arguments should I set.
+# This is just an example on the SCons docs.
+#env = DefaultEnvironment(tools = ['gcc', 'gnulink'],CC = '/usr/local/bin/gcc') 
 
 
+lib_list = Library('_my_lib', Glob('*[!hello]*.h'))
+# you will use all cpp files except for "hello.cpp"
+my_program_files = Glob('*[!hello]*.cpp')
 
-lib_list = Library('_my_lib', Glob('*.h'))
 
-
-all_apps = env.Program('my_program', Glob('*.cpp'))
+all_apps = env.Program('my_program', my_program_files)
 
 #print("\nname:", all_apps[0],"\n")
 
@@ -163,6 +192,11 @@ for l_name in all_apps :
 
 decider_test()
 
+multi_construction_env_test()
+
+# Show cccom which is the command line used to compile a C source file to a (static) object file.
+# The result example, "CCCOM is: gcc -o -c -I."
+print ("CCCOM is:", env.subst('$CCCOM'),"\n")
 
 # This is test function to see how glob function works.
 #glob_func_test()
