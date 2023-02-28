@@ -146,11 +146,20 @@ def multi_construction_env_test():
 	opt = Environment(CCFLAGS = '-O2')
 	dbg = Environment(CCFLAGS = '-g')
 
+	
 	opt_obj = opt.Object('foo-opt', 'hello.cpp')
 	opt.Program(opt_obj)
 
 	dbg_obj = dbg.Object('foo-dbg', 'hello.cpp')
 	dbg.Program(dbg_obj)
+	
+	"""
+	# You can replace existing construction variable values using the Replace method
+	# This is just an example on SCons docs.
+	# Note that because SCons function and method calls are order-independent, 
+	# the last replacement "wins" and is used to build all targets. 
+	#env.Replace(CCFLAGS = '-DDEFINE2')
+	"""
 
 	return 0
 
@@ -192,11 +201,14 @@ for l_name in all_apps :
 
 decider_test()
 
-multi_construction_env_test()
 
 # Show cccom which is the command line used to compile a C source file to a (static) object file.
 # The result example, "CCCOM is: gcc -o -c -I."
 print ("CCCOM is:", env.subst('$CCCOM'),"\n")
+
+
+# Multi construction environments test.
+#multi_construction_env_test()
 
 # This is test function to see how glob function works.
 #glob_func_test()
