@@ -159,7 +159,36 @@ def multi_construction_env_test():
 	# Note that because SCons function and method calls are order-independent, 
 	# the last replacement "wins" and is used to build all targets. 
 	#env.Replace(CCFLAGS = '-DDEFINE2')
+	
+	# Also you have append function.
+	# Note that when you append the new value to the old value, if both are strings, the previous and new strings # are simply concatenated.
+	#env.Append(CCFLAGS = ['-DLAST'])
+	# If the construction variable doesn't already exist, you can use AppendUnique.
+	#env.AppendUnique(CCFLAGS=['-g'])
+	# PrependUnique is useful to add a new and unique value to the beginning of a construction variable.
+	#env.PrependUnique(CCFLAGS=['-g']
 	"""
+
+	return 0
+
+def progress_func_test():
+	"""Progress function test.
+
+		SCons can take a long time making absolutely sure that every target is,
+		then progress function help to prevent that users mistakenly conclude that 
+		
+		SCons is hung or that there is some other problem with the build.
+		Of course, normally you don't want to add all of these additional lines to 
+		your build output, as that can make it difficult for the user to find errors.
+
+		A more useful way too display this progress might be to have the file names
+		printed directly to the user's screen, and the actual way is on the SCons docs,
+		"9.3. Providing Build Progress Output: the Progress Function."
+		:rtype: int
+	"""
+	
+	# You need \n because progress func does not make a newline automatically.
+	Progress('Evaluating $TARGET\n')
 
 	return 0
 
@@ -201,6 +230,7 @@ for l_name in all_apps :
 
 decider_test()
 
+progress_func_test()
 
 # Show cccom which is the command line used to compile a C source file to a (static) object file.
 # The result example, "CCCOM is: gcc -o -c -I."
