@@ -5,8 +5,9 @@ gcc version 12.1.0
 
 ## 各フォルダの説明
 
-- [ scons_study ] : Sconstruct及びC++の学習用プログラム
-- [ hello_cpp, hello_scons ] : hello world プログラム
+- [ sConstruct_test ] : Sconstruct学習用
+- [ cpp_study ] : C++ 学習用
+- [ hello_cpp, hello_scons ] : hello world のみ
 
 
 ## 現在scons_studyで学習及び実装予定中の物
@@ -22,3 +23,4 @@ gcc version 12.1.0
 - moduleの実装テスト
 - ヘッダーファイルの実装テスト
 - メモリリークに関する勉強及びメモリリークに関する実装テスト
+- スマートポインタ実装テスト
