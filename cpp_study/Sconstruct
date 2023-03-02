@@ -1,0 +1,7 @@
+import os.path
+
+env = Environment(CPPPATH = '.')
+
+my_program_files = Glob('*.cpp')
+
+all_apps = env.Program('main', my_program_files)
