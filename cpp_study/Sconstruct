@@ -2,6 +2,10 @@ import os.path
 
 env = Environment(CPPPATH = '.')
 
+lib_files = Glob('*.h')
+lib_list = Library('_myLib', lib_files)
+
 my_program_files = Glob('*.cpp')
 
 all_apps = env.Program('main', my_program_files)
+
