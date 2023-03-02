@@ -1,5 +1,5 @@
 # scons_study
-This is for studying SCons, C++ and Python. 
+This is for studying SCons and C++. 
 
 gcc version 12.1.0
 
