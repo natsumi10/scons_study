@@ -1,6 +1,8 @@
 #include <iostream>
 #include <memory>
 using namespace std;
+#include <gtkmm.h>
+
 
 
 int shared_ptr_test()
@@ -23,9 +25,35 @@ int shared_ptr_test()
     return 0;
 }
 
+
+class MyWindow : public Gtk::Window
+{
+public:
+    MyWindow();
+};
+
+MyWindow::MyWindow()
+{
+    set_title("Basic application");
+    set_default_size(400,400);
+}
+
+
 int main()
 {
 	std::cout << "This is main function!" << std::endl;
-	shared_ptr_test();
-	return 0;
+	//shared_ptr_test();
+    
+    auto app = Gtk::Application::create("examples.base");
+    MyWindow my_window;
+    return app->run(my_window);
+    
+    //return app->make_window_and_run<MyWindow>("gtkmm tutorial");
+	/*
+    Gtk::Main kit("gtkmm tutorial");
+    Gtk::Window GtkmmTutorial;
+    GtkmmTutorial.set_default_size(400, 400);
+    Gtk::Main::run(GtkmmTutorial);
+    */
+    //return 0;
 }
