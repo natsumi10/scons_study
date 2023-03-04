@@ -2,7 +2,7 @@ import os.path
 
 env = Environment(CPPPATH = '.')
 
-lib_files = Glob('*.h')
+lib_files = Glob('*.hpp')
 lib_list = Library('_myLib', lib_files)
 env.ParseConfig('pkg-config --cflags --libs gtkmm-3.0')
 my_program_files = Glob('*.cpp')
