@@ -16,7 +16,7 @@ inline MyWindow::MyWindow()
     set_default_size(400,400);
 }
 
-int gui_test()
+inline int gui_test()
 {
     auto app = Gtk::Application::create("work.gtkmm.examples");
     //auto app = Gtk::Application::create(argc, argv,"work.gtkmm.examples");
