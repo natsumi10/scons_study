@@ -186,68 +186,93 @@ def progress_func_test():
 		"9.3. Providing Build Progress Output: the Progress Function."
 		:rtype: int
 	"""
-	
+
 	# You need \n because progress func does not make a newline automatically.
 	Progress('Evaluating $TARGET\n')
+	
+	"""
+	# This way is the example of that file names printed directly to the user's screen, 
+	# not to the same standard output stream where build output is printed, 
+	# and to use a carriage return character (\r) so that each file name gets re-printed on the same line.
+	Progress('$TARGET\r', file=open('/dev/tty', 'w'), overwrite=True)
+	"""
 
 	return 0
 
+def print_node_file_name_test(all_apps):
+	"""Print the node's file name.
+		
+		:rtype: int
+	"""
+	print("\nname:", all_apps[0],"\n")
 
-# This function gets Name Error which tells 'CPPFLAGS' is not defined'.
-#AllowSubstExceptions()
+	print("\nPrinting Node's file name test.\n")
+	lib_names = []
+	name = str("")
+	for l_name in all_apps :
+		name = str(l_name)
+		if not os.path.exists(name):
+			print(name,"does not exist!\n")
+		else : 
+			print("name :",name,"\n")
+			lib_names.append(name)
+	return 0
 
-# This function allows these error: IndexError ,NameError, and ZeroDivisionError.
-AllowSubstExceptions(IndexError,NameError,ZeroDivisionError)
+def main():
+	print("\nStart main function.")
+	# This function gets Name Error which tells 'CPPFLAGS' is not defined'.
+	#AllowSubstExceptions()
 
-
-
-env = Environment(CPPPATH = '.')
-# DefaultEnvironment is faster way but I need to learn more about what arguments should I set.
-# This is just an example on the SCons docs.
-#env = DefaultEnvironment(tools = ['gcc', 'gnulink'],CC = '/usr/local/bin/gcc') 
-
-
-lib_list = Library('_my_lib', Glob('*[!hello]*.h'))
-# you will use all cpp files except for "hello.cpp"
-my_program_files = Glob('*[!hello]*.cpp')
-
-
-all_apps = env.Program('my_program', my_program_files)
-
-#print("\nname:", all_apps[0],"\n")
-
-
-print("\nPrinting Node's file name test.\n")
-lib_names = []
-name = str("")
-for l_name in all_apps :
-	name = str(l_name)
-	if not os.path.exists(name):
-		print(name,"does not exist!\n")
-	else : 
-		print("name :",name,"\n")
-		lib_names.append(name)
-
-decider_test()
-
-progress_func_test()
-
-# Show cccom which is the command line used to compile a C source file to a (static) object file.
-# The result example, "CCCOM is: gcc -o -c -I."
-print ("CCCOM is:", env.subst('$CCCOM'),"\n")
+	# This function allows these error: IndexError ,NameError, and ZeroDivisionError.
+	AllowSubstExceptions(IndexError,NameError,ZeroDivisionError)
 
 
-# Multi construction environments test.
-#multi_construction_env_test()
 
-# This is test function to see how glob function works.
-#glob_func_test()
+	env = Environment(CPPPATH = '.')
 
-# This is the function that show all children of the object variable.
-#print_all_children(all_apps)
+	"""
+		DefaultEnvironment is faster way but I need to learn more about what arguments should I set.
+		This is just an example on the SCons docs.
+		#env = DefaultEnvironment(tools = ['gcc', 'gnulink'],CC = '/usr/local/bin/gcc') 
+	"""
 
-# This is the function that shows tips learned through the SCons docs.
-#tips_collection()
+	lib_list = Library('_my_lib', Glob('*[!hello]*.h'))
+	
+	# you will use all cpp files except for "hello.cpp"
+	my_program_files = Glob('*[!hello]*.cpp')
 
-# This is the function to print items inside env
-#print_env(env)
+
+	all_apps = env.Program('my_program', my_program_files)
+
+	
+
+	print_node_file_name_test(all_apps)
+
+	
+
+	decider_test()
+
+	# The function to run progress func.
+	#progress_func_test()
+
+	# Show cccom which is the command line used to compile a C source file to a (static) object file.
+	# The result example, "CCCOM is: gcc -o -c -I."
+	print ("CCCOM is:", env.subst('$CCCOM'),"\n")
+
+
+	# Multi construction environments test.
+	#multi_construction_env_test()
+
+	# This is test function to see how glob function works.
+	#glob_func_test()
+
+	# This is the function that show all children of the object variable.
+	#print_all_children(all_apps)
+
+	# This is the function that shows tips learned through the SCons docs.
+	#tips_collection()
+
+	# This is the function to print items inside env
+	#print_env(env)
+
+main()
