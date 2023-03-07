@@ -7,6 +7,7 @@ lib_list = Library('_myLib', lib_files)
 
 # You want to run like this : g++ main.cpp 'pkg-config --cflags --libs gtkmm-3.0'
 env.ParseConfig('pkg-config --cflags --libs gtkmm-3.0')
+
 my_program_files = Glob('*.cpp')
 
 all_apps = env.Program('main', my_program_files)
