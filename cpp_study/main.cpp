@@ -7,6 +7,7 @@ using namespace std;
 #include "gui_test.hpp"
 #include "virtual_inheritance_1.hpp"
 #include "virtual_inheritance_2.hpp"
+#include "template_test.hpp"
 
 //int main(int argc, char* argv[])
 int main()
@@ -22,6 +23,9 @@ int main()
     /* This is the function about multiple inheritance */
     virtual_inheritance_1();
     virtual_inheritance_2();
+
+    /* This is the function to use template function */
+    template_test();
 
     return 0;
     
