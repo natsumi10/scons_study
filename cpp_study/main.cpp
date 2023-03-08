@@ -4,10 +4,11 @@ using namespace std;
 
 
 #include "shared_ptr_test.hpp"
-#include "gui_test.hpp"
+//#include "gui_test.hpp"
 #include "virtual_inheritance_1.hpp"
 #include "virtual_inheritance_2.hpp"
 #include "template_test.hpp"
+#include "pointer_refference_test.hpp"
 
 //int main(int argc, char* argv[])
 int main()
