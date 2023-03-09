@@ -50,7 +50,7 @@ public:
 
 int virtual_inheritance_1()
 {
-	cout << "\nvirtual_inheritance_1() called.\n" << endl;
+	cout << "\nvirtual_inheritance_1 called.\n" << endl;
 
 	DerivedX dx(10);
 

@@ -1,0 +1,65 @@
+#ifndef POINTER_REFFERENCE_TEST_2_HPP_
+#define POINTER_REFFERENCE_TEST_2_HPP_
+
+#include <iostream>
+using namespace std;
+
+enum Gender
+{
+	MALE,
+	FEMALE
+};
+
+struct Person
+{
+	char name[50];
+	int age;
+	enum Gender gender;
+};
+
+void showPerson(Person[], int);
+void showPerson(Person&);
+
+void showPerson(Person p[], int len)
+{
+	for (int i = 0; i < len; i++)
+	{
+		showPerson(p[i]);
+		cout << endl;
+	}
+}
+
+// argument p is call by refference
+void showPerson(Person &p)
+{
+	cout << "name: " << p.name << "\n";
+	cout << "age: " << p.age << "\n";
+	if(p.gender == MALE)
+	{
+		cout << "gender: male" << endl;
+	}else{
+		cout << "gender: female" << endl;
+	}
+}
+
+
+int pointer_refference_test_2()
+{
+	
+	cout << "\nStart pointer_refference_test_2 function.\n" << endl;
+
+	Person person[] = {
+		{"Yamada Taro", 20, MALE},
+		{"YAmamoto Hanako", 18, FEMALE },
+		{"Tanaka Fujio", 21, MALE},
+		{"Yamashita Ayumi", 19, MALE},
+	};
+	showPerson(
+		person,
+		sizeof(person) / sizeof(person[0])
+	);
+	//std::cin.get();
+	return 0;
+}
+
+#endif //POINTER_REFFERENCE_TEST_2_HPP_

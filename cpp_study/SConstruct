@@ -1,0 +1,2 @@
+AddOption('--build', default='build')
+SConscript("main.scons", variant_dir=GetOption('build'), duplicate=0)

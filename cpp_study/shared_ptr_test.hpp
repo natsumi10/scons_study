@@ -1,6 +1,6 @@
 #ifndef SHARED_PTR_TEST_HPP_
 #define SHARED_PTR_TEST_HPP_
-
+using namespace std;
 
 int shared_ptr_test()
 {
@@ -16,14 +16,14 @@ int shared_ptr_test()
             variable as same as normal pointa.
         */
     	
-        std::shared_ptr<int> y = x;    // We have two owner now.
+        shared_ptr<int> y = x;    // We have two owner now.
 
-    	std::cout << "y = "<< *y << std::endl;
+    	cout << "y = "<< *y << std::endl;
     }
     
     // Because the block scope was closed, y is deleted and there is one owner.
 
-    std::cout << "x = " << *x << std::endl;
+    cout << "x = " << *x << std::endl;
 
     return 0;
 }

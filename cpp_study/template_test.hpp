@@ -1,6 +1,8 @@
 #ifndef TEMPLATE_TEST_HPP_
 #define TEMPLATE_TEST_HPP_
 
+using namespace std;
+
 template <typename T1, typename T2>
 T2 sum_2( T1 a, T2 b)
 {

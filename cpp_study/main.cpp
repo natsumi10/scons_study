@@ -8,25 +8,37 @@ using namespace std;
 #include "virtual_inheritance_1.hpp"
 #include "virtual_inheritance_2.hpp"
 #include "template_test.hpp"
-#include "pointer_refference_test.hpp"
+#include "pointer_refference_test_1.hpp"
+#include "pointer_refference_test_2.hpp"
 
 //int main(int argc, char* argv[])
 int main()
 {
     std::cout << "Start main function!" << std::endl; 
 
-    /* This is the function of shared_ptr test. */
-    //shared_ptr_test();
+    /* Comment out because I don't use there functions now.
+    
+    // This is the function of shared_ptr test. 
+    shared_ptr_test();
 
-    /* This is the function to use gui */
+    // This is the function to use gui 
     //gui_test();
     
-    /* This is the function about multiple inheritance */
+    // This is the function about multiple inheritance
     virtual_inheritance_1();
     virtual_inheritance_2();
 
-    /* This is the function to use template function */
+    // This is the function to use template function
     template_test();
+
+    
+
+    // The function to see how to use pointer and refference
+    pointer_refference_test_1();
+
+    */
+    
+    pointer_refference_test_2();
 
     return 0;
     

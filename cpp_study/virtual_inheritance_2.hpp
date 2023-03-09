@@ -47,7 +47,7 @@ public:
 
 int virtual_inheritance_2()
 {
-	cout << "\nvirtual_inheritance_2() called.\n" << endl;
+	cout << "\nvirtual_inheritance_2 called.\n" << endl;
 	DerivedX_2 dx(30);
 
 	return 0;
