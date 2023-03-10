@@ -2,6 +2,7 @@
 #define POINTER_REFFERENCE_TEST_2_HPP_
 
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 enum Gender
@@ -42,6 +43,23 @@ void showPerson(Person &p)
 	}
 }
 
+// person is call by refference
+void pointer_with_struct_test( Person& person)
+{
+	struct Person* person_ptr_1;
+	person_ptr_1 = &person;
+	cout << "pointer test name : " << person_ptr_1->name << endl;
+
+	struct Person* person_ptr_2;
+	person_ptr_2 = (Person*)malloc(sizeof(Person));
+	
+	if(person_ptr_2 != NULL){
+		person_ptr_1++;
+		*person_ptr_2 = *person_ptr_1;
+		cout << "pointer test name : " << person_ptr_2->name << endl;
+	}
+	free(person_ptr_2);
+}
 
 int pointer_refference_test_2()
 {
@@ -60,9 +78,10 @@ int pointer_refference_test_2()
 	);
 	//std::cin.get();
 
-	struct Person* person_ptr;
-	person_ptr = &person[0];
-	cout << "pointer test name : " << person_ptr->name << endl;
+	pointer_with_struct_test(person[0]);
+
+	
+
 
 	return 0;
 }
