@@ -59,6 +59,11 @@ int pointer_refference_test_2()
 		sizeof(person) / sizeof(person[0])
 	);
 	//std::cin.get();
+
+	struct Person* person_ptr;
+	person_ptr = &person[0];
+	cout << "pointer test name : " << person_ptr->name << endl;
+
 	return 0;
 }
 
