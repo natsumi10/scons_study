@@ -1,6 +1,7 @@
 import os.path
 
-env = Environment(CPPPATH = '.')
+env = Environment(CPPPATH = '.',
+			SCONS_CXX_STANDARD='c++23')
 
 lib_files = Glob('*.hpp')
 
