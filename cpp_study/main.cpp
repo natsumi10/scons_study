@@ -10,6 +10,7 @@ using namespace std;
 #include "template_test.hpp"
 #include "pointer_refference_test_1.hpp"
 #include "pointer_refference_test_2.hpp"
+#include "new_delete_test.hpp"
 
 //int main(int argc, char* argv[])
 int main()
@@ -31,14 +32,14 @@ int main()
     // This is the function to use template function
     template_test();
 
-    
-
     // The function to see how to use pointer and refference
     pointer_refference_test_1();
 
-    */
-    
+    // The function of pointer and refference as argument test. 
     pointer_refference_test_2();
+    
+    */
+    new_delete_test();
 
     return 0;
     

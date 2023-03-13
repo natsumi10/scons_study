@@ -22,47 +22,49 @@ namespace Person_Scoped
 
 */
 
-class Person_B
+class Person_A
 {
 	private:
 		const char* name_;
 		int age_;
 		//enum gender_ { Male = "MALE", Female = "FEMALE"};
 	public:
-		Person_B(const char* name, int age) : 
+		Person_A(const char* name, int age) : 
 										name_(name), age_(age)
 		{
-			cout << "\nPerson_B constructor is called.\n" << endl;
+			cout << "\nPerson_A constructor is called.\n" << endl;
 			cout << "name: " << name_ << endl;
 			cout << "age: " << age_ << endl;
 		}
 
-		~Person_B(){
-			cout << "Person_B destructor is called." << endl;
+		~Person_A(){
+			cout << "\nDestructor of Person_A is called." << endl;
 		}
 
-		void print_person_b();
+		void print_person_a();
 };
 
-inline void Person_B::print_person_b(){
-		cout << "\nperson name is : " << endl;
+inline void Person_A::print_person_a(){
+		cout << "\nperson name is : " << name_ << endl;
 }
 
 int new_delete_test()
 {
 	/*
-	Person_B person_b[] = {
+	Person_A person_a[] = {
 		{"Yamada Taro", 20, MALE},
 		{"YAmamoto Hanako", 18, FEMALE },
 		{"Tanaka Fujio", 21, MALE},
 		{"Yamashita Ayumi", 19, FEMALE},
 	};
 	*/
-	Person_B* person_b_1 = new Person_B("Yamada Taro", 20);
+	//Person_A* person_a_1 = new Person_A("Yamada Taro", 20);
 
-	person_b_1->print_person_b();
+	class Person_A person_a01 = {"Yamada Taro", 20};
 
-	delete person_b_1;
+	person_a01.print_person_a();
+
+	//delete person_a01;
 	return 0;
 }
 
