@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstdlib>
+
 using namespace std;
 
 enum Gender
@@ -61,6 +62,7 @@ void pointer_with_struct_test( Person& person)
 	free(person_ptr_2);
 }
 
+
 int pointer_refference_test_2()
 {
 	
@@ -84,8 +86,6 @@ int pointer_refference_test_2()
 	cout << "person age : " << person[0].age << "\n" <<endl;
 
 	pointer_with_struct_test(person[0]);
-
-	
 
 
 	return 0;
