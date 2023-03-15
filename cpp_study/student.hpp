@@ -6,21 +6,32 @@
 
 using namespace std;
 
-namespace Student_Gender
+class Human
 {
-	enum class Gender
-	{
-		MALE,
-		VEMALE
-	};
-}
-class Student
-{
+	private:
+		enum class Gender{ NONE, MALE, FEMALE, OTHER };
 	public:
 		string name;
 		int age;
-		Student_Gender::Gender gender;
+		Gender gender;
+		Human(void);
+		Human(string name_, int age_, Gender gender_);
+		~Human(){
+			cout << "Human destructor is called." << endl;
+		}
+};
+
+class Student : public Human
+{
+	public:
+		int school_class;
+		double grade;
 		void show_student();
+		Student(void);
+		Student(int school_class_, double grade_);
+		~Student(){
+			cout << "Student destructor is called." << endl;
+		}
 };
 
 
