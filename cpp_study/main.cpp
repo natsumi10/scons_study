@@ -12,6 +12,9 @@ using namespace std;
 #include "pointer_refference_test_2.hpp"
 #include "new_delete_test.hpp"
 
+#include "student.hpp"
+#include "student_class_test.hpp"
+
 //int main(int argc, char* argv[])
 int main()
 {
@@ -38,8 +41,12 @@ int main()
     // The function of pointer and refference as argument test. 
     pointer_refference_test_2();
     
-    */
+    // Continue working.
     new_delete_test();
+    */
+
+    student_class_test();
+
 
     return 0;
     
