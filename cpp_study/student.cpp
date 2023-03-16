@@ -22,13 +22,26 @@ Student::Student(void){
 	this->grade = 0;
 }
 
-Student::Student(int school_class_, double grade_){
+Student::Student(string name_, int age_, Gender gender_){
 	cout << "Student constructor is called." << endl;
-	school_class = school_class_;
-	grade_ = grade_;
+	this->name = name_;
+	this->age = age_;
+	this->gender = gender_;
+	
 }
 
-void Student::show_student()
+Student::Student(string name_, int age_, Gender gender_, int school_class_){
+
+}
+
+void Student::print_gender(){
+	
+}
+
+void Student::print_student()
 {
-	cout << "The show_student method is called.\n" << endl;
+	cout << "\nThe show_student method is called.\n" << endl;
+	cout << "The name is : " << this->name << endl;
+	cout << "The age is : " << this->age << endl;
+	cout << endl;
 }

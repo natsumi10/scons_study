@@ -9,10 +9,11 @@ using namespace std;
 class Human
 {
 	private:
-		enum class Gender{ NONE, MALE, FEMALE, OTHER };
+		
 	public:
 		string name;
 		int age;
+		enum class Gender{ NONE, MALE, FEMALE, OTHER };
 		Gender gender;
 		Human(void);
 		Human(string name_, int age_, Gender gender_);
@@ -26,12 +27,18 @@ class Student : public Human
 	public:
 		int school_class;
 		double grade;
-		void show_student();
+		
 		Student(void);
-		Student(int school_class_, double grade_);
-		~Student(){
+		Student(string name_, int age_, Gender gender_);
+		Student(string name_, int age_, Gender gender_, int school_class_);
+		~Student()
+		{
 			cout << "Student destructor is called." << endl;
 		}
+		void print_gender();
+		void print_student();
+		
+
 };
 
 
