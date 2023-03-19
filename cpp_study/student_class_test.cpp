@@ -6,15 +6,23 @@
 
 using namespace std;
 
+auto create_single_instance_test(){
+	/* Create a single of instance student class for test.
+	*/
+	// Create single instance test.
+	Student students_a("single Yamada Taro", 20, Human::Gender::MALE);
+	//students_a.print_student();
+	return students_a;
+}
 
 int student_class_test(){
 	cout << "\nThe student_class_test function is called.\n" << endl;
 	
-	// Create single instance test.
-	Student students_a("Yamada Taro", 20, Human::Gender::MALE);
-	//students_a.print_student();
+	// Create a single instance of student class.
+	Student students_a = create_single_instance_test();
+	//students_a.print_student(); // Print to check.
 
-
+	/*
 	// Create array instance test.
 	Student students_b[4] = {
 		Student("array Yamada Taro", 20, Human::Gender::MALE),

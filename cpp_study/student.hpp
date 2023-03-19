@@ -33,7 +33,8 @@ class Student : public Human
 		Student(string name_, int age_, Gender gender_, int school_class_);
 		~Student()
 		{
-			//cout << "Student destructor is called." << endl;
+			cout << "Student, the name [ " << this->name << "] 's destructor is called." << endl;
+
 		}
 		void print_gender();
 		void print_student();
