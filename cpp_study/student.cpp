@@ -17,13 +17,13 @@ Human::Human(string name_, int age_, Gender gender_){
 }
 
 Student::Student(void){
-	//cout << "Student default constructor is called." << endl;
+	cout << "Student default constructor is called." << endl;
 	this->school_class = 0;
 	this->grade = 0;
 }
 
 Student::Student(string name_, int age_, Gender gender_){
-	//cout << "Student constructor is called." << endl;
+	cout << "Student constructor is called." << endl;
 	this->name = name_;
 	this->age = age_;
 	this->gender = gender_;
