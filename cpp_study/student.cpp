@@ -12,8 +12,12 @@ Human::Human(void){
 
 Human::Human(string name_, int age_, Gender gender_){
 	//cout << "Human constructor is called." << endl;
+	if (age_< 0){
+		this->age = 0;
+	}else{
+		this->age = age_;	
+	}
 	this->name = name_;
-	this->age = age_;
 }
 
 Student::Student(void){
@@ -24,8 +28,13 @@ Student::Student(void){
 
 Student::Student(string name_, int age_, Gender gender_){
 	cout << "Student constructor is called." << endl;
+	//cout << "Human constructor is called." << endl;
+	if (age_< 0){
+		this->age = 0;
+	}else{
+		this->age = age_;	
+	}
 	this->name = name_;
-	this->age = age_;
 	this->gender = gender_;
 	
 }
