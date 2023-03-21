@@ -43,6 +43,8 @@ Student::Student(string name_, int age_, Gender gender_, int school_class_){
 
 }
 
+
+// The method to print gender.
 void Student::print_gender(){
 	switch(this->gender){
 	case Human::Gender::MALE :
@@ -63,10 +65,13 @@ void Student::print_gender(){
 	}
 }
 
+
+// The method to print indata of Student class.
+// Note that this method call Student::print_gender method above.
 void Student::print_student()
 {
 	
-	cout << "\nThe show_student method is called.\n" << endl;
+	//cout << "\nThe show_student method is called.\n" << endl;
 	cout << "The name is : " << this->name << endl;
 	cout << "The age is : " << this->age << endl;
 	Student::print_gender();
