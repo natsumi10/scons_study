@@ -34,12 +34,15 @@ std::unique_ptr<Student[]> create_four_student_test()
 }
 
 
+// Print single student info.
 void print_single_student_object(Student &student)
 {
 	cout << endl;
 	student.print_student();
 }
 
+
+// Print multiple sutudents info.
 void print_multiple_students_object(std::unique_ptr<Student[]> & students_ptr, int number)
 {
 	cout << "\n" << endl;
@@ -53,6 +56,27 @@ void print_multiple_students_object(std::unique_ptr<Student[]> & students_ptr, i
 }
 
 
+std::vector<Student> create_vector_instances_array_test()
+{
+	std::vector<Student> students_c = {
+		Student("vector Yamada Taro", 20, Human::Gender::MALE),
+		Student("vector YAmamoto Hanako", 18, Human::Gender::FEMALE ),
+		Student("vector Tanaka Fujio", 21, Human::Gender::MALE),
+		Student("vector Yamashita Ayumi", 19, Human::Gender::FEMALE),
+	};
+	return students_c;
+}
+
+
+void print_vector_students_instance(std::vector<Student> &students)
+{
+	for (auto &item : students)
+	{
+		item.print_student();
+	}
+}
+
+
 int student_class_test(){
 	cout << "\nThe student_class_test function is called.\n" << endl;
 	/*
@@ -60,28 +84,22 @@ int student_class_test(){
 	Student students_a = create_single_instance_test();
 	// Print to check.
 	//students_a.print_student(); 
-	*/
-	
+
 	
 	// Create some instances with array test.
 	// You can use unique pointer instead of using a pointer. The best way is using vector. 
 	std::unique_ptr<Student[]> students_b_ptr = create_four_student_test();
-	// Print all students name to check this works.
+	// Print all students name to check.
 	print_single_student_object(students_b_ptr[0]);
 	print_multiple_students_object(students_b_ptr, 4);
-	
-	
-	
+	*/
 
-	/*
+	
 	// Create vector instance test.
-	std::vector<Student> students_c = {
-		Student("dynamic Yamada Taro", 20, Human::Gender::MALE),
-		Student("dynamic YAmamoto Hanako", 18, Human::Gender::FEMALE ),
-		Student("dynamic Tanaka Fujio", 21, Human::Gender::MALE),
-		Student("dynamic Yamashita Ayumi", 19, Human::Gender::FEMALE),
-	};
-	students_c[2].print_student();
+	std::vector<Student> students_c = create_vector_instances_array_test();
+	print_vector_students_instance(students_c);
+	//students_c[2].print_student();
+
 	// Release the dynamic array.
 	std::vector<Student>().swap(students_c);
 
