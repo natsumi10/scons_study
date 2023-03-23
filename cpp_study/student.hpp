@@ -16,7 +16,7 @@ class Human
 		enum class Gender{ NONE, MALE, FEMALE, OTHER,/*You can add "," after last elem in enum.*/ };
 		Gender gender;
 		Human(void);
-		Human(string name_, int age_, Gender gender_);
+		Human( const string name_, const int age_, const Gender gender_);
 		~Human(){
 			//cout << "Human destructor is called." << endl;
 		}
@@ -29,8 +29,9 @@ class Student : public Human
 		double grade;
 		
 		Student(void);
-		Student(string name_, int age_, Gender gender_);
-		Student(string name_, int age_, Gender gender_, int school_class_);
+		Student(const string name_, const int age_, const Gender gender_);
+		Student(const string name_, const int age_, const Gender gender_,
+												const int school_class_);
 		~Student()
 		{
 			cout << "Student, the name [ " << this->name << "] 's destructor is called." << endl;

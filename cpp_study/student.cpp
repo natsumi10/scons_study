@@ -10,7 +10,7 @@ Human::Human(void){
 	this->gender = Gender::NONE;
 }
 
-Human::Human(string name_, int age_, Gender gender_){
+Human::Human(const string name_, const int age_, const Gender gender_){
 	//cout << "Human constructor is called." << endl;
 	if (age_< 0){
 		this->age = 0;
@@ -26,7 +26,7 @@ Student::Student(void){
 	this->grade = 0;
 }
 
-Student::Student(string name_, int age_, Gender gender_){
+Student::Student(const string name_, const int age_, const Gender gender_){
 	cout << "Student constructor is called." << endl;
 	//cout << "Human constructor is called." << endl;
 	if (age_< 0){
@@ -39,7 +39,7 @@ Student::Student(string name_, int age_, Gender gender_){
 	
 }
 
-Student::Student(string name_, int age_, Gender gender_, int school_class_){
+Student::Student(const string name_, const int age_, const Gender gender_, const int school_class_){
 
 }
 
