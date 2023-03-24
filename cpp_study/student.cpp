@@ -20,6 +20,7 @@ Human::Human(const string name_, const int age_, const Gender gender_){
 	this->name = name_;
 }
 
+
 Student::Student(void){
 	cout << "Student default constructor is called." << endl;
 	this->school_class = 0;
