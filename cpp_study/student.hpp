@@ -17,9 +17,12 @@ class Human
 		Gender gender;
 		Human(void);
 		Human( const string name_, const int age_, const Gender gender_);
-		~Human(){
+		~Human()
+		{
 			//cout << "Human destructor is called." << endl;
 		}
+		void print_human();
+		void print_gender();
 };
 
 class Student : public Human

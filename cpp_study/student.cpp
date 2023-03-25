@@ -21,6 +21,36 @@ Human::Human(const string name_, const int age_, const Gender gender_){
 }
 
 
+void Human::print_gender(){
+	switch(this->gender){
+	case Human::Gender::MALE :
+		cout << "Gender : Male" << endl;
+		break ;
+	case Human::Gender::FEMALE :
+		cout << "Gender : FEMALE" << endl;
+		break ;
+	case Human::Gender::NONE :
+		cout << "Gender : NONE" << endl;
+		break ;
+	case Human::Gender::OTHER :
+		cout << "Gender : OTHER" << endl;
+		break ;
+	default :
+		cout << "error" << endl;
+		break ;
+	}
+}
+
+
+void Human::print_human(){
+	//cout << "\nThe show_student method is called.\n" << endl;
+	cout << "The name is : " << this->name << endl;
+	cout << "The age is : " << this->age << endl;
+	Human::print_gender();
+	cout << endl;
+}
+
+
 Student::Student(void){
 	cout << "Student default constructor is called." << endl;
 	this->school_class = 0;
