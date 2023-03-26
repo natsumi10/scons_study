@@ -22,7 +22,7 @@ class Human
 			//cout << "Human destructor is called." << endl;
 		}
 		void print_human();
-		void print_gender();
+		virtual void print_gender();
 };
 
 class Student : public Human
