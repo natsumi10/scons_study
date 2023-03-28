@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory>
+#include <vector>
 using namespace std;
 
 
@@ -11,7 +12,7 @@ using namespace std;
 #include "pointer_refference_test_1.hpp"
 #include "pointer_refference_test_2.hpp"
 #include "new_delete_test.hpp"
-#include "vector_test.cpp"
+#include "vector_test.hpp"
 
 #include "student.hpp"
 #include "student_class_test.hpp"
