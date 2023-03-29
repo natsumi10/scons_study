@@ -49,11 +49,10 @@ int main()
     
     // This is the function to study how class works via create student class.
     student_class_test();
-    */
+    
 
     vector_test();
-
-
+    */
     return 0;
     
 
