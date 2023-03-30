@@ -13,6 +13,7 @@ using namespace std;
 #include "pointer_refference_test_2.hpp"
 #include "new_delete_test.hpp"
 #include "vector_test.hpp"
+#include "lambda_test.hpp"
 
 #include "student.hpp"
 #include "student_class_test.hpp"
