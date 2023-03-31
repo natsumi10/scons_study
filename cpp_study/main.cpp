@@ -54,6 +54,8 @@ int main()
 
     vector_test();
     */
+
+    lambda_test();
     return 0;
     
 
